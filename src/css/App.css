@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+header {
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: blue;
+    position: fixed;
+    padding: 25px;
+    width: 100%;
+}
