@@ -1,3 +1,7 @@
-export default function Footer() {
-  return <footer>Footer</footer>;
+export default function Footer(props) {
+  Footer.defaultProps = {
+    title: "DIV Contacts",
+  };
+
+  return <footer>{props.title}</footer>;
 }

@@ -1,12 +1,31 @@
-export default function Header(props) {
-  Header.defaultProps = {
-    title: "Header",
-  };
+import PropTypes from "prop-types";
 
+// class Header extends React.Component {
+//   render() {
+//     return (
+//       <header style={{ backgroundColor: this.props.bgColor }}>
+//         <h3>{this.props.title}</h3>
+//       </header>
+//     );
+//   }
+// }
+
+const Header = ({ title, bgColor }) => {
   return (
-    <header className="header">
-      <h3>{props.title}</h3>
-      <h5>{props.number}</h5>
-    </header>
+    <nav style={{ backgroundColor: bgColor }}>
+      <h3>{title}</h3>
+    </nav>
   );
-}
+};
+
+Header.defaultProps = {
+  title: "Contacts",
+  bgColor: "blue",
+};
+
+Header.propTypes = {
+  text: PropTypes.string,
+  bgColor: PropTypes.string,
+};
+
+export default Header;

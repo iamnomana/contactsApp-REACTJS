@@ -1,0 +1,64 @@
+body {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+nav {
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+
+}
+
+input,
+select,
+textarea {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+
+
+footer {
+    background-color: blue;
+    position: fixed;
+    padding: 25px;
+    width: 100%;
+}
+
+.content {
+    margin: 0 0 0 20px;
+}
+
+.home {
+    display: flex;
+    margin-top: 20px;
+}
+
+.left-side {
+    flex: 1;
+}
+
+.right-side {
+    flex: 1;
+}
+
+.contactList {
+    width: 100%;
+    border: 1px solid white;
+}
+
+.buttons {
+    margin: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.row {}
