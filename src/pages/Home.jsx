@@ -1,14 +1,19 @@
 import { useState } from "react";
 
 export default function Home() {
-  // const [name, setName] = useState("Divine");
-  let contacts = [
+  const [contacts, setContacts] = useState([
     { id: 1, name: "Divine Nomana", age: 11, gender: "Male", phone: "0554505635" },
     { id: 2, name: "Kofi Nomana", age: 12, gender: "Male", phone: "0987654321" },
     { id: 3, name: "Gameli Nomana", age: 13, gender: "Male", phone: "0123456789" },
-  ];
+  ]);
 
-  const changeName = () => {};
+  const addContact = () => {
+    let id = contacts.length + 1;
+    let contact = { id: id, name: "Dora", age: 4, phone: "328394" + id, gender: "Female" };
+
+    setContacts((contacts) => [...contacts, contact]);
+  };
+
   return (
     <>
       <div className="home">
@@ -29,8 +34,8 @@ export default function Home() {
             <div>
               <label htmlFor="">Gender: </label>
               <select id="" style={{ width: "50%" }}>
-                <option value="M">Male</option>
-                <option value="F">Female</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
               </select>
             </div>
             <div>
@@ -39,7 +44,7 @@ export default function Home() {
             </div>
 
             <div className="buttons">
-              <button type="button" onClick={(e) => null}>
+              <button type="button" onClick={() => addContact()}>
                 Save
               </button>
               <button type="button">Clear</button>
