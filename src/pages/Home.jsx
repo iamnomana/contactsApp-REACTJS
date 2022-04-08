@@ -19,12 +19,26 @@ export default function Home() {
   };
 
   const addContact = () => {
-    setContacts((contacts) => [...contacts, inputs]);
+    if (edit) {
+      const index = contacts.findIndex((val) => val.id === inputs.id);
+
+      contacts[index] = inputs;
+      setContacts(contacts);
+      setEdit(false);
+    } else {
+      setContacts((contacts) => [...contacts, inputs]);
+    }
+
+    setInputs({});
   };
 
   const editContact = (id) => {
     const index = contacts.findIndex((val) => val.id === id);
+
+    console.log(index);
+    // return;
     setInputs(contacts[index]);
+    setEdit(true);
   };
 
   const deleteContact = (id) => {
