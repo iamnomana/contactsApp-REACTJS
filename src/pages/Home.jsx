@@ -2,16 +2,35 @@ import { useState } from "react";
 
 export default function Home() {
   const [contacts, setContacts] = useState([
-    { id: 1, name: "Divine Nomana", age: 11, gender: "Male", phone: "0554505635" },
-    { id: 2, name: "Kofi Nomana", age: 12, gender: "Male", phone: "0987654321" },
-    { id: 3, name: "Gameli Nomana", age: 13, gender: "Male", phone: "0123456789" },
+    { id: 1, name: "Divine Nomana", age: 11, gender: "M", phone: "0554505635" },
+    { id: 2, name: "Kofi Nomana", age: 12, gender: "M", phone: "0987654321" },
+    { id: 3, name: "Gameli Nomana", age: 13, gender: "M", phone: "0123456789" },
   ]);
 
-  const addContact = () => {
-    let id = contacts.length + 1;
-    let contact = { id: id, name: "Dora", age: 4, phone: "328394" + id, gender: "Female" };
+  const [inputs, setInputs] = useState({});
+  const [edit, setEdit] = useState(false);
 
-    setContacts((contacts) => [...contacts, contact]);
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+
+    setInputs((inputs) => ({ ...inputs, [name]: value }));
+    console.log(inputs);
+  };
+
+  const addContact = () => {
+    setContacts((contacts) => [...contacts, inputs]);
+  };
+
+  const editContact = (id) => {
+    const index = contacts.findIndex((val) => val.id === id);
+    setInputs(contacts[index]);
+  };
+
+  const deleteContact = (id) => {
+    const newContacts = contacts.filter((val) => val.id !== id);
+    console.log(newContacts);
+    setContacts(newContacts);
   };
 
   return (
@@ -20,27 +39,59 @@ export default function Home() {
         <div className="left-side">
           <form>
             <div>
-              <label htmlFor="">Id: </label>
-              <input type="text" id="" />
+              <label>Id: </label>
+              <input
+                type="text"
+                name="id"
+                value={inputs.id || ""}
+                onChange={(e) => {
+                  handleChange(e);
+                }}
+              />
             </div>
             <div>
-              <label htmlFor="">Name: </label>
-              <input type="text" id="" />
+              <label>Name: </label>
+              <input
+                type="text"
+                name="name"
+                value={inputs.name || ""}
+                onChange={(e) => {
+                  handleChange(e);
+                }}
+              />
             </div>
             <div>
-              <label htmlFor="">Age: </label>
-              <input type="text" id="" />
+              <label>Age: </label>
+              <input
+                type="text"
+                name="age"
+                value={inputs.age || ""}
+                onChange={(e) => {
+                  handleChange(e);
+                }}
+              />
             </div>
             <div>
-              <label htmlFor="">Gender: </label>
-              <select id="" style={{ width: "50%" }}>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-              </select>
+              <label>Gender: </label>
+              <input
+                type="text"
+                name="gender"
+                value={inputs.gender || ""}
+                onChange={(e) => {
+                  handleChange(e);
+                }}
+              />
             </div>
             <div>
-              <label htmlFor="">Phone: </label>
-              <input type="text" id="" />
+              <label>Phone: </label>
+              <input
+                type="text"
+                name="phone"
+                value={inputs.phone || ""}
+                onChange={(e) => {
+                  handleChange(e);
+                }}
+              />
             </div>
 
             <div className="buttons">
@@ -73,8 +124,8 @@ export default function Home() {
                   <td>{contact.gender}</td>
                   <td>{contact.phone}</td>
                   <td>
-                    <button>Edit</button>
-                    <button>Delete</button>
+                    <button onClick={() => editContact(contact.id)}>Edit</button>
+                    <button onClick={() => deleteContact(contact.id)}>Delete</button>
                   </td>
                 </tr>
               ))}
