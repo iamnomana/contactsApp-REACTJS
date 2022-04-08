@@ -29,7 +29,7 @@ export default function Home() {
       setContacts((contacts) => [...contacts, inputs]);
     }
 
-    setInputs({});
+    clearInput();
   };
 
   const editContact = (id) => {
@@ -39,6 +39,10 @@ export default function Home() {
     // return;
     setInputs(contacts[index]);
     setEdit(true);
+  };
+
+  const clearInput = () => {
+    setInputs({});
   };
 
   const deleteContact = (id) => {
