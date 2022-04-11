@@ -1,11 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
-  const [contacts, setContacts] = useState([
-    { id: 1, name: "Divine Nomana", age: 11, gender: "M", phone: "0554505635" },
-    { id: 2, name: "Kofi Nomana", age: 12, gender: "M", phone: "0987654321" },
-    { id: 3, name: "Gameli Nomana", age: 13, gender: "M", phone: "0123456789" },
-  ]);
+  const [contacts, setContacts] = useState([]);
 
   const [inputs, setInputs] = useState({});
   const [edit, setEdit] = useState(false);
@@ -40,6 +36,17 @@ export default function Home() {
     setInputs(contacts[index]);
     setEdit(true);
   };
+
+  useEffect(() => {
+    fetch("http://localhost:3001/contacts").then((res) => {
+      console.log(res.json());
+    });
+    console.log("useEffect");
+
+    // return () => {
+    //   second
+    // }
+  }, []);
 
   const clearInput = () => {
     setInputs({});

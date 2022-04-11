@@ -1,0 +1,46 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Kofi",
+      "age": 3,
+      "gender": "M",
+      "phone": "255555"
+    },
+    {
+      "id": 2,
+      "name": "Dan",
+      "age": 3,
+      "gender": "M",
+      "phone": "255555"
+    },
+    {
+      "id": 3,
+      "name": "Caroline",
+      "age": 30,
+      "gender": "F",
+      "phone": "45454"
+    },
+    {
+      "id": 4,
+      "name": "Ama",
+      "age": 14,
+      "gender": "F",
+      "phone": "9329"
+    },
+    {
+      "id": 5,
+      "name": "Kofi",
+      "age": 19,
+      "gender": "M",
+      "phone": "4532"
+    },
+    {
+      "id": 6,
+      "name": "KK",
+      "age": 21,
+      "gender": "M",
+      "phone": "45435"
+    }
+  ]
+}
