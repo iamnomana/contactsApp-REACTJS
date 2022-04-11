@@ -35,10 +35,7 @@ footer {
     margin: 0 0 0 20px;
 }
 
-.home {
-    display: flex;
-    margin-top: 20px;
-}
+
 
 .left-side {
     flex: 1;
