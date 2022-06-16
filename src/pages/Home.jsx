@@ -67,9 +67,9 @@ export default function Home() {
         <div className="left-side flex md:flex-col">
           <form>
             <div className="flex flex-col mb-4">
-              <label className="mb-2 uppercase font-bold text-lg text-grey-darkest">Id: </label>
+              <label className="mb-2 uppercase  text-grey-darkest">Id: </label>
               <input
-                className="border py-2 px-3 text-grey-darkest"
+                className="border py-1 px-3 text-grey-darkest"
                 type="text"
                 name="id"
                 value={inputs.id || ""}
@@ -80,9 +80,9 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col mb-4">
-              <label className="mb-2 uppercase font-bold text-lg text-grey-darkest">Name: </label>
+              <label className="mb-2 uppercase  text-grey-darkest">Name: </label>
               <input
-                className="border py-2 px-3 text-grey-darkest"
+                className="border py-1 px-3 text-grey-darkest"
                 type="text"
                 name="name"
                 value={inputs.name || ""}
@@ -93,9 +93,9 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col mb-4">
-              <label className="mb-2 uppercase font-bold text-lg text-grey-darkest">Age: </label>
+              <label className="mb-2 uppercase  text-grey-darkest">Age: </label>
               <input
-                className="border py-2 px-3 text-grey-darkest"
+                className="border py-1 px-3 text-grey-darkest"
                 type="text"
                 name="age"
                 value={inputs.age || ""}
@@ -106,9 +106,9 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col mb-4">
-              <label className="mb-2 uppercase font-bold text-lg text-grey-darkest">Gender: </label>
+              <label className="mb-2 uppercase  text-grey-darkest">Gender: </label>
               <input
-                className="border py-2 px-3 text-grey-darkest"
+                className="border py-1 px-3 text-grey-darkest"
                 type="text"
                 name="gender"
                 value={inputs.gender || ""}
@@ -119,9 +119,9 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col mb-4">
-              <label className="mb-2 uppercase font-bold text-lg text-grey-darkest">Phone: </label>
+              <label className="mb-2 uppercase  text-grey-darkest">Phone: </label>
               <input
-                className="border py-2 px-3 text-grey-darkest"
+                className="border py-1 px-3 text-grey-darkest"
                 type="text"
                 name="phone"
                 value={inputs.phone || ""}
@@ -131,11 +131,20 @@ export default function Home() {
               />
             </div>
 
-            <div className="buttons">
-              <button type="button" onClick={() => addContact()}>
+            <div className="space-x-3">
+              <button
+                className="bg-green-800 hover:bg-green-900 text-white py-1 px-2 rounded"
+                type="button"
+                onClick={() => addContact()}
+              >
                 Save
               </button>
-              <button type="button">Clear</button>
+              <button
+                className="bg-red-600 hover:bg-red-900 text-white py-1 px-2 rounded"
+                type="button"
+              >
+                Clear
+              </button>
             </div>
           </form>
         </div>
@@ -164,13 +173,13 @@ export default function Home() {
                     <td>{contact.phone}</td>
                     <td className="space-x-2">
                       <button
-                        className="bg-blue-700 hover:bg-blue-900 text-white font-bold py-1 px-2 rounded"
+                        className="bg-blue-700 hover:bg-blue-900 text-white py-1 px-2 rounded"
                         onClick={() => editContact(contact.id)}
                       >
                         Edit
                       </button>
                       <button
-                        className="bg-red-700 hover:bg-red-900 text-white font-bold py-1 px-2 rounded"
+                        className="bg-red-700 hover:bg-red-900 text-white py-1 px-2 rounded"
                         onClick={() => deleteContact(contact.id)}
                       >
                         Delete
